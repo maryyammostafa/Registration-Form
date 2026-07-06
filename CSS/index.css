@@ -1,0 +1,71 @@
+body {
+    background-color: #F8F9FA;
+}
+
+.registration .register,
+.profile .box {
+    background-color: #fff;
+    width: 450px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+}
+
+.profile .box .item {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .08);
+    padding: 10px;
+}
+
+.icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #0D6EFD;
+    border: 1px solid #0D6EFD;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    margin: auto;
+    position: relative;
+}
+
+.icon i.edit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #0D6EFD;
+    border-radius: 50%;
+    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+@media (max-width: 1300px) {
+
+    .registration .register,
+    .profile .box {
+        width: 320px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 1300px) {
+
+    .registration .register,
+    .profile .box {
+        width: 400px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1300px) {
+
+    .registration .register,
+    .profile .box {
+        width: 450px;
+    }
+}

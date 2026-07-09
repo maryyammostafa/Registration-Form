@@ -25,7 +25,7 @@
                         <p class="fs-5 m-0"><?php echo $_SESSION['user']['email']; ?></p>
                     </div>
                     <div class="item mb-4">
-                        <h5 class="text-primary"><i class="fa-solid fa-envelope"></i> Your Language</h5>
+                        <h5 class="text-primary"><i class="fa-solid fa-language"></i> Your Language</h5>
                         <p class="fs-5 m-0"><?php echo($_SESSION['user']['lang'] == "ar") ? "Arabic" : "English"; ?></p>
                     </div>
                     <div class="buttons d-flex">
@@ -84,17 +84,26 @@
                         <input type="hidden" name="action" value="password">
                         <div class="box mb-2">
                             <label for="Current" class="w-100 mb-1">Current Password : </label>
-                            <input type="password" class="w-100 form-control <?php echo isset($_SESSION['errors']['current']) ? "is-invalid" : ""; ?>" name="current" id="Current">
+                            <div class="password position-relative">
+                                <input type="password" class="w-100 form-control <?php echo isset($_SESSION['errors']['current']) ? "is-invalid" : ""; ?>" onkeyup="toggleEye(this)"  name="current" id="Current">
+                                <i class="fa-solid fa-eye eye" onclick="togglePassword(this)"></i>
+                            </div>
                             <p class="alert text-danger w-100 m-0 mt-1 p-0" > <?php echo isset($_SESSION['errors']['current']) ? "* " . $_SESSION['errors']['current'] : ""; ?></p>
                         </div>
                         <div class="box mb-2">
                             <label for="New" class="w-100 mb-1">New Password : </label>
-                            <input type="password" class="w-100 form-control <?php echo isset($_SESSION['errors']['new']) ? "is-invalid" : ""; ?>" name="new" id="New">
+                            <div class="password">
+                                <input type="password" class="w-100 form-control <?php echo isset($_SESSION['errors']['new']) ? "is-invalid" : ""; ?>" onkeyup="toggleEye(this)"  name="new" id="New">
+                                <i class="fa-solid fa-eye eye" onclick="togglePassword(this)"></i>
+                            </div>
                             <p class="alert text-danger w-100 m-0 mt-1 p-0" > <?php echo isset($_SESSION['errors']['new']) ? "* " . $_SESSION['errors']['new'] : ""; ?></p>
                         </div>
                         <div class="box mb-2">
                             <label for="Confirm" class="w-100 mb-1">Confirm New Password : </label>
-                            <input type="password" class="w-100 form-control <?php echo isset($_SESSION['errors']['confirm']) ? "is-invalid" : ""; ?>" name="confirm" id="Confirm">
+                            <div class="password">
+                                <input type="password" class="w-100 form-control <?php echo isset($_SESSION['errors']['confirm']) ? "is-invalid" : ""; ?>" onkeyup="toggleEye(this)"  name="confirm" id="Confirm">
+                                <i class="fa-solid fa-eye eye" onclick="togglePassword(this)"></i>
+                            </div>
                             <p class="alert text-danger w-100 m-0 mt-1 p-0" > <?php echo isset($_SESSION['errors']['confirm']) ? "* " . $_SESSION['errors']['confirm'] : ""; ?></p>
                         </div>
                         <button class="btn ms-auto mt-3 d-block btn-primary">Save changes</button>
@@ -127,6 +136,7 @@
     </div>
 
     <script src="./JS/bootstrap.js"></script>
+    <script src="./JS/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <?php if (($_SESSION['modal'] ?? '') === "profile"): ?>
         <script>

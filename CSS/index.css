@@ -2,6 +2,15 @@ body {
     background-color: #F8F9FA;
 }
 
+.password .eye {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    color: #373737;
+    cursor: pointer;
+    display: none;
+}
+
 .registration .register,
 .profile .box {
     background-color: #fff;

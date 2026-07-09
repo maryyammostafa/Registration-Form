@@ -32,8 +32,11 @@
                     </div>
                     <div class="box mb-2">
                         <label for="Password" class="w-100 mb-1">Password : </label>
-                        <input type="password" class="w-100 form-control <?php echo isset($_SESSION['errors']['password']) ? "is-invalid" : ""; ?>" name="password" id="Password" value="" placeholder="********">
-                        <p class="alert text-danger w-100 m-0 mt-1 p-0" > <?php echo isset($_SESSION['errors']['password']) ? "* " . $_SESSION['errors']['password'] : "";; ?></p>
+                        <div class="password position-relative">
+                            <input type="password" class="w-100 form-control <?php echo isset($_SESSION['errors']['password']) ? "is-invalid" : ""; ?>" onkeyup="toggleEye(this)" name="password" id="Password" value="" placeholder="********">
+                            <i class="fa-solid fa-eye eye" onclick="togglePassword(this)"></i>
+                        </div>
+                        <p class="alert text-danger w-100 m-0 mt-1 p-0" > <?php echo isset($_SESSION['errors']['password']) ? "* " . $_SESSION['errors']['password'] : ""; ?></p>
                     </div>
                     <div class="box mb-2">
                         <label for="Language" class="w-100 mb-1">Language : </label>
@@ -61,6 +64,7 @@
     ?>
 
     <script src="./JS/bootstrap.js"></script>
+    <script src="./JS/index.js"></script>
 
 </body>
 </html>

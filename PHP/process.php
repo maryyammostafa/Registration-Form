@@ -56,8 +56,6 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK){
     $imageError = validateImage($file);
     if ($imageError !== null){
         $errors['image'] = $imageError;
-    }else {
-        $newFileName = uploadImage($file);
     }
 }else{
     $errors['image'] = "Profile image is required!";
@@ -70,6 +68,8 @@ if (!empty($errors)){
     header("Location: ../index.php");
     exit;
 }
+
+$newFileName = uploadImage($file);
 
 $_SESSION['user'] = [
     'id' => $id,

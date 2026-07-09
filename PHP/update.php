@@ -34,7 +34,7 @@ if ($action == 'profile'){
     if (empty($lang)){
         $errors['lang'] = "Language is required!";
     }
-    
+
     if (!empty($errors)){
         $_SESSION['errors'] = $errors;
         $_SESSION['old'] = $old;
@@ -42,6 +42,12 @@ if ($action == 'profile'){
         header("Location: ../profile.php");
         exit;
     }
+
+    if ($name === $_SESSION['user']['name'] && $email === $_SESSION['user']['email'] && $lang === $_SESSION['user']['lang'])   {
+        header("Location: ../profile.php");
+        exit;
+    }
+
     $_SESSION['user']['name'] = $name;
     $_SESSION['user']['email'] = $email;
     $_SESSION['user']['lang'] = $lang;
@@ -81,6 +87,7 @@ if ($action == 'profile'){
         header("Location: ../profile.php");
         exit;
     }
+
     $_SESSION['user']['password'] = password_hash($newPassword, PASSWORD_DEFAULT);
     $_SESSION['success'] = true;
 }else if ($action == 'image'){
@@ -107,6 +114,7 @@ if ($action == 'profile'){
     if (file_exists($oldImagePath)) {
         unlink($oldImagePath);
     }
+
     $_SESSION['user']['image'] = $newFileName;
     $_SESSION['success'] = true;
 }

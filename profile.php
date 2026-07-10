@@ -93,7 +93,7 @@
                         </div>
                         <div class="box mb-2">
                             <label for="New" class="w-100 mb-1">New Password : </label>
-                            <div class="password">
+                            <div class="password position-relative">
                                 <input type="password" class="w-100 form-control <?php echo isset($_SESSION['errors']['new']) ? "is-invalid" : ""; ?>" onkeyup="toggleEye(this)"  name="new" id="New">
                                 <i class="fa-solid fa-eye eye" onclick="togglePassword(this)"></i>
                             </div>
@@ -101,7 +101,7 @@
                         </div>
                         <div class="box mb-2">
                             <label for="Confirm" class="w-100 mb-1">Confirm New Password : </label>
-                            <div class="password">
+                            <div class="password position-relative">
                                 <input type="password" class="w-100 form-control <?php echo isset($_SESSION['errors']['confirm']) ? "is-invalid" : ""; ?>" onkeyup="toggleEye(this)"  name="confirm" id="Confirm">
                                 <i class="fa-solid fa-eye eye" onclick="togglePassword(this)"></i>
                             </div>
